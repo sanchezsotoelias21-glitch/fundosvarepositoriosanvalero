@@ -905,7 +905,7 @@ ul.inline li a {
 </ul>
 </div>
       
-    </div><!--/.block-content -->
+ </div><!--/.block-content -->
 </div><!--/.block -->
 
   </div>
