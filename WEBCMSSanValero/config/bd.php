@@ -13,6 +13,5 @@
     'password' => 'secret',
     
     'charset' => 'utf8mb4',
-
     );
 ?>
