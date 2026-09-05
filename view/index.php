@@ -760,7 +760,6 @@ ul.inline li a {
 
     <span property="schema:name" content="Politécnico San Valero" class="hidden"></span>
 
-
   <div class="node-content clear">
     
             <div property="schema:text" class="field field--name-body field--type-text-with-summary field--label-hidden field-item"><img alt="500" src="https://fundosva.com/sites/default/files/inline-images/500_0.jpg" class="align-center" width="1920" height="500" loading="lazy" />
