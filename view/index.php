@@ -819,7 +819,7 @@ ul.inline li a {
   <div class="block-content">
       
             <div class="field field--name-body field--type-text-with-summary field--label-hidden field-item"><ul>
-	<li><a href="https://fundosva.com/historia">Historia</a></li>
+	<li><a href="/view/pages/nosotros/historia.php">Historia</a></li>
 	<li><a href="https://fundosva.com/comite-directivo">Comité Directivo</a></li>
 	<li><a href="https://fundosva.com/organigrama-general-plan-estrategico-2020-2025">Organigrama</a></li>
 	<li><a href="https://fundosva.com/egresados-fundosva">Egresados</a></li>
@@ -1022,7 +1022,7 @@ p {
   </div>
 
     
-        <script src="https://fundosva.com/sites/default/files/js/js_dCp4b4X40YRNxf1AwA0YUv5FKfWfRqX_tUPsFgDtKII.js"></script>
+        <script src="../js/script.js"></script>
 
       </body>
 </html>
