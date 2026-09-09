@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/style.css" />
+<link rel="stylesheet" href="../assets/css/style.css" />
 <style>
 .header {
     background: #ffffff;
@@ -593,6 +593,18 @@ ul.inline li a {
 .region-content-home-top .block:nth-child(even) {
     padding: 0 0 1rem 0 !important;
 }}
+
+/* Reglas para que el iframe ocupe el espacio del contenedor */
+.iframe-wrapper {
+    width: 100%;
+    height: 70vh;
+}
+#content-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
 </style>
   </head>
   <body class="user-guest site-page page-type-page no-sidebar">
@@ -612,87 +624,24 @@ ul.inline li a {
 <header class="header">
   <div class="container">
     <div class="header-container">
-              <div class="site-brand">
-            <div class="block-region region-header">
-    <div id="block-eduxpro-branding" class="block">
-  
-    
-  <div class="block-content">
-  <div class="site-branding">
-      <div class="site-logo">
-      <a href="https://fundosva.com/" rel="home">
-        <img src="https://fundosva.com/sites/default/files/Logo-300.jpg" alt="Inicio" />
-      </a>
-    </div><!-- site-logo -->
-    </div><!-- site-branding -->
-  </div><!--/.block-content -->
-</div><!--/.block -->
-
-  </div>
-
-        </div> <!--/.site-branding -->
-                  <div class="header-right">
-                  <div class="mobile-menu"><span></span></div>           <div class="primary-menu-wrapper">
-            <div class="menu-wrap">
-              <div class="close-mobile-menu">x</div>
-                <div class="block-region region-primary-menu">
-    <div id="block-mainnavigation" class="block">
-  
-    
-  <div class="block-content">
-      
-<ul id="superfish-main" class="menu sf-menu sf-main sf-horizontal sf-style-white">
-  
-<li class="sf-depth-1 menuparent"><a href="https://fundosva.com/" class="nolink sf-depth-1 menuparent">Nosotros</a><ul><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/historia" class="sf-depth-2">Historia</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/comite-directivo" class="sf-depth-2">Comité Directivo</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/organigrama-general-plan-estrategico-2020-2025" class="sf-depth-2">Organigrama</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/egresados-fundosva" class="sf-depth-2">Egresados</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/quienes-somos" class="sf-depth-2">CONOCENOS</a></li></ul></li><li class="sf-depth-1 sf-no-children"><a href="https://fundosva.com/contacto" class="sf-depth-1">CONTACTO</a></li><li class="sf-depth-1 menuparent"><a href="https://fundosva.com/" class="nolink sf-depth-1 menuparent">Formación Continua</a><ul><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/formacion-continua-san-valero" class="sf-depth-2">San Valero</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/formacion-continua-aragon" class="sf-depth-2">Aragón</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/formacion-continua-centro-colonial" class="sf-depth-2">Centro Colonial</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/cursos-propios" class="sf-depth-2">Cursos Propios</a></li></ul></li><li class="sf-depth-1 sf-no-children"><a href="https://fundosva.com/actualidad" class="sf-depth-1">Actualidad</a></li><li class="sf-depth-1 menuparent"><a href="https://fundosva.com/" class="nolink sf-depth-1 menuparent" target="_self">NUESTROS CENTROS</a><ul><li class="sf-depth-2 sf-no-children"><a href="https://www.unisva.edu.do/" class="sf-depth-2 sf-external">UNISVA</a></li><li class="sf-depth-2 sf-no-children"><a href="https://www.gruposanvalero.es/" class="sf-depth-2 sf-external" target="_blank">Grupo San Valero</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/politecnico-san-valero" class="sf-depth-2">Politécnico San Valero</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/politecnico-aragon" class="sf-depth-2">Politécnico Aragón</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/tecnologico-cardenal-lopez-rodriguez" class="sf-depth-2">Tecnológico Cardenal López Rodríguez</a></li><li class="sf-depth-2 sf-no-children"><a href="https://www.netacad.com/" class="sf-depth-2 sf-external" target="_blank">Academia Cisco</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/escuela-de-idiomas" class="sf-depth-2">Escuela de Idiomas</a></li></ul></li><li class="sf-depth-1 sf-no-children"><a href="https://fundosva.com/oferta-formativa-del-centro" class="sf-depth-1">Oferta Formativa</a></li><li class="sf-depth-1 menuparent"><a href="" class="nolink sf-depth-1 menuparent">Inscripción </a><ul><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/contact/cursos_propios" class="sf-depth-2">Cursos Propios</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/contact/escuela_de_idiomas" class="sf-depth-2">Escuela de Idiomas</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/contact/cursos_centro_colonial_infotep" class="sf-depth-2">CENTRO COLONIAL INFOTEP</a></li><li class="sf-depth-2 sf-no-children"><a href="https://fundosva.com/contact/infotep" class="sf-depth-2">INFOTEP CURSOS GRATUITOS</a></li></ul></li><li class="sf-depth-1 sf-no-children"><a href="https://fundosva.edu.do/" class="sf-depth-1 sf-external" target="_blank">AULA VIRTUAL</a></li>
-</ul>
-
-    </div><!--/.block-content -->
-</div><!--/.block -->
-
-  </div>
-
-            </div> <!-- /.menu-wrap -->
-          </div> <!-- /.primary-menu-wrapper -->
-         <!--  end if for -->
-                  <div class="full-page-search">
-  <div class="search-icon">
-    <img src="https://fundosva.com/themes/eduXpro-Drupal-Theme/eduxpro/images/icons/search.svg" />
-  </div> <!--/.search icon -->
-  <div class="search-box">
-    <div class="container">
-      <div class="search-box-content">
-            <div class="block-region region-search-box">
-    <div class="search-block-form block" data-drupal-selector="search-block-form" id="block-formulariodebusqueda-2" role="search">
-  
-    
-  <div class="block-content">
-      <form action="https://fundosva.com/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
-  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
-      <label for="edit-keys" class="visually-hidden">Buscar</label>
-        <input title="Escriba lo que quiere buscar." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
-
+      <div class="site-brand">
+        <div class="site-logo">
+          <a href="index.php" rel="home">
+            <img src="https://fundosva.com/sites/default/files/Logo-300.jpg" alt="Inicio" />
+          </a>
         </div>
-<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Buscar" class="button js-form-submit form-submit" />
-</div>
+      </div>
 
-</form>
-
-    </div><!--/.block-content -->
-</div><!--/.block -->
-
+            <nav class="local-pages-menu" aria-label="Menú principal">
+                <a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a>
+                <a href="view/pages/nosotros/conocenos.php" target="content-frame">Nosotros</a>
+                <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a>
+                <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a>
+                <a href="view/pages/tecnicas/informática.php" target="content-frame">Técnicas</a>
+            </nav>
+    </div>
   </div>
-
-        <div class="header-search-close">x</div>
-      </div><!--/search-box-content -->
-    </div><!-- container -->
-
-  </div> <!-- /.search-box -->
-</div> <!--/.full-page-search -->
-                 <!--  end sidebar_sliding -->
-      </div> <!-- /.header-right -->
-        </div><!-- /header-container -->
-  </div><!-- /container -->
-</header><!-- /header -->
+</header>
   <section class="page-header">
   <div class="container">
     <div class="page-header-container">
@@ -717,10 +666,10 @@ ul.inline li a {
         <nav class="breadcrumb clear" role="navigation" aria-labelledby="system-breadcrumb">
     <ol class="breadcrumb-items">
           <li class="breadcrumb-item">
-                  <a href="https://fundosva.com/">Inicio</a> <span>&#x27F6;</span>
+                  <a href="view/pages/inicio/inicio.php">Inicio</a> <span>&#x27F6;</span>
               </li>
           <li class="breadcrumb-item">
-                  <a href="https://fundosva.com/politecnico-san-valero">Politécnico San Valero</a> <span>&#x27F6;</span>
+                  <a href="view/pages/nosotros/conocenos.php">Politécnico San Valero</a> <span>&#x27F6;</span>
               </li>
           <li class="breadcrumb-item">
                   Politécnico San Valero
@@ -747,66 +696,22 @@ ul.inline li a {
 </div>
 <div class="main-wrapper">
   <div class="container clear">
-    <div class="main-container">
-      <main id="main" class="main">
-        <a id="main-content" tabindex="-1"></a>
-                <div class="node-content">
-            <div class="block-region region-content">
-    <div id="block-eduxpro-content" class="block">
-  
-    
-  <div class="block-content">
-      <article data-history-node-id="37" role="article" about="/politecnico-san-valero/presentacion" typeof="schema:WebPage" class="node node-view-mode-full">
-
-    <span property="schema:name" content="Politécnico San Valero" class="hidden"></span>
-
-  <div class="node-content clear">
-    
-            <div property="schema:text" class="field field--name-body field--type-text-with-summary field--label-hidden field-item"><img alt="500" src="https://fundosva.com/sites/default/files/inline-images/500_0.jpg" class="align-center" width="1920" height="500" loading="lazy" />
-<p class="text-align-justify">El Politécnico San Valero es una obra de la Iglesia Católica dedicada a la Formación Técnico Profesional; fue autorizado por la Secretaría de Estado de Educación en 1998 como Centro oficial para impartir las siguientes Carreras Técnicas en el Segundo Ciclo del Nivel Secundario:</p>
-
-<p>&nbsp;</p>
-
-<p>•Bachillerato Técnico en Gestión Administrativa y Tributaria.<img alt="1024" height="373" src="https://fundosva.com/sites/default/files/inline-images/1024.jpg" width="665" class="align-right" loading="lazy" /></p>
-
-<p>•Bachillerato Técnico en Equipos Electrónicos.</p>
-
-<p>•Bachillerato Técnico en Instalaciones Eléctricas.</p>
-
-<p>•Bachillerato Técnico en Desarrollo y Administración de Aplicaciones Informáticas.</p>
-
-<p>•Bachillerato Técnico en Refrigeración y Acondicionamiento de Aire.</p>
-
-<h2 class="text-align-center">&nbsp;</h2>
-
-<p>&nbsp;</p>
-
-<h2 class="text-align-center"><a href="https://fundosva.com/oferta-formativa-del-centro" rel=" noopener" target="_blank">Oferta Formativa</a> </h2>
-
-<h2 class="text-align-center"><a href="https://fundosva.com/formacion-continua-san-valero" rel=" noopener" target="_blank">Formación Continua</a></h2>
-
-<p>&nbsp;</p>
-
-<p class="text-align-justify">El Politécnico San Valero tiene el objetivo de contribuir a la dignificación de las personas a través de la educación integral sin discriminación religiosa, de género, nivel social o político. Nuestro compromiso es lograr la transformación individual y social de los alumnos más desfavorecidos. El Centro cuenta con la disponibilidad de 660 plazas, en cada año escolar, desde 3ro. hasta 6to. de Secundaria.</p>
-
-<p class="text-align-justify">Dentro de los servicios que se le ofrece a toda la Comunidad Educativa se encuentran: Dispensario Médico, Salón Multiusos, Zona Deportiva(Baloncesto, Vóleibol), Áreas de Recreación y Ambientación, Orientación desde el Departamento de Psicología, Gestiones de Becas y ayudas, a través del Departamento Social, Biblioteca, Capilla, Atención Personalizada en aspectos Educativos, entre otros.</p>
-
-<p class="text-align-justify">&nbsp;</p>
-
-<p class="text-align-justify">&nbsp;</p>
+    <div class="iframe-wrapper">
+      <iframe id="content-frame" name="content-frame" src="pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy"></iframe>
+    </div>
+  </div>
 </div>
-      
-  </div>
-</article>
-
-    </div><!--/.block-content -->
-</div><!--/.block -->
-
-  </div>
-                      </main>
-                </div><!--/main-container -->
-  </div><!--/container -->
-</div><!--/main-wrapper -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.local-pages-menu a');
+    links.forEach((link) => {
+      link.addEventListener('click', function () {
+        links.forEach((item) => item.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
   <footer class="footer-blocks footer">
   <div class="container">
     <div class="footer-blocks-container">
