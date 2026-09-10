@@ -697,7 +697,7 @@ ul.inline li a {
 <div class="main-wrapper">
   <div class="container clear">
     <div class="iframe-wrapper">
-      <iframe id="content-frame" name="content-frame" src="pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy"></iframe>
+      <iframe id="content-frame" name="content-frame" src="view/pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy"></iframe>
     </div>
   </div>
 </div>
