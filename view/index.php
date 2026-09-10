@@ -627,18 +627,47 @@ ul.inline li a {
       <div class="site-brand">
         <div class="site-logo">
           <a href="index.php" rel="home">
-            <img src="../../img/logo.png" alt="Inicio" />
+            <img src="https://fundosva.com/sites/default/files/Logo-300.jpg" alt="Inicio" />
           </a>
         </div>
       </div>
 
             <nav class="local-pages-menu" aria-label="Menú principal">
-                <a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a>
-                <a href="view/pages/nosotros/conocenos.php" target="content-frame">Nosotros</a>
-                <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a>
-                <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a>
-                <a href="view/pages/tecnicas/informática.php" target="content-frame">Técnicas</a>
-            </nav>
+  <div class="menu-item"><a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a></div>
+  <div class="menu-item has-dropdown">
+    <a href="view/pages/nosotros/conocenos.php" target="content-frame">Nosotros <span class="dropdown-arrow">▾</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="view/pages/nosotros/historia.php" target="content-frame">Historia</a></li>
+      <li><a href="view/pages/nosotros/comitedirectivo.php" target="content-frame">Comité Directivo</a></li>
+      <li><a href="view/pages/nosotros/organigrama.php" target="content-frame">Organigrama</a></li>
+      <li><a href="view/pages/nosotros/egresados.php" target="content-frame">Egresados</a></li>
+      <li><a href="view/pages/nosotros/conocenos.php" target="content-frame">Conócenos</a></li>
+    </ul>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad <span class="dropdown-arrow">▾</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a></li>
+    </ul>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa <span class="dropdown-arrow">▾</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a></li>
+    </ul>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="view/pages/tecnicas/informática.php" target="content-frame">Técnicas <span class="dropdown-arrow">▾</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="view/pages/tecnicas/contabilidad.php" target="content-frame">Contabilidad</a></li>
+      <li><a href="view/pages/tecnicas/electricidad.php" target="content-frame">Electricidad</a></li>
+      <li><a href="view/pages/tecnicas/electrónicadigital.php" target="content-frame">Electrónica Digital</a></li>
+      <li><a href="view/pages/tecnicas/informática.php" target="content-frame">Informática</a></li>
+      <li><a href="view/pages/tecnicas/refrigeración.php" target="content-frame">Refrigeración</a></li>
+    </ul>
+  </div>
+  <div class="menu-item"><a href="#contacto">Contacto</a></div>
+</nav>
     </div>
   </div>
 </header>
