@@ -135,8 +135,7 @@
             <img src="../../img/logo.png" alt="Politécnico San Valero" class="login-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x80?text=San+Valero';">
             <h2>Gestor de Contenidos</h2>
             <p>Politécnico San Valero</p>
-        </div>
-        
+        </div>  
         <div class="login-body">
             <form action="cms.html" method="GET">
                 <div class="form-group">
