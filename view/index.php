@@ -627,7 +627,7 @@ ul.inline li a {
       <div class="site-brand">
         <div class="site-logo">
           <a href="index.php" rel="home">
-            <img src="../../img/logo.png" alt="Inicio" />
+            <img src="https://fundosva.com/sites/default/files/Logo-300.jpg" alt="Inicio" />
           </a>
         </div>
       </div>

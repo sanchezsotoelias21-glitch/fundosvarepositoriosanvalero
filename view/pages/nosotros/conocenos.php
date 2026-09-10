@@ -22,8 +22,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Conocenos</h1>
-      <p>La Fundación Dominicana San Valero, a través de los centros que gestiona en Santo Domingo — Politécnico San Valero, Politécnico Aragón, Centro Tecnológico Cardenal López Rodríguez, Escuela de Idiomas Fundosva y el Instituto Técnico Superior (ITES) —, está especializada en la formación de personas para su inserción en el mundo laboral. 
+      La Fundación Dominicana San Valero, a través de los centros que gestiona en Santo Domingo — Politécnico San Valero, Politécnico Aragón, Centro Tecnológico Cardenal López Rodríguez, Escuela de Idiomas Fundosva y el Instituto Técnico Superior (ITES) —, está especializada en la formación de personas para su inserción en el mundo laboral. 
         Ofrece bachilleratos técnicos, cursos de formación continua, carreras de nivel técnico superior, y educación primaria y secundaria para adultos. 
         Se trata de uno de los proyectos de cooperación al desarrollo más importantes impulsados desde Aragón.</p>
 
@@ -38,7 +37,7 @@
 
       <p>A nivel de asistencia y acción social a la comunidad tenemos un dispensario de atención primaria, un Departamento Social que ayuda en diferentes ámbitos a personas necesitadas y un Departamento de Orientación y Psicología al servicio del sector.</p>
 
-      <img src="img/conocenos.jpg" alt="Conocenos" style="width: 100%; max-width: 600px; margin-top: 20px;" />
+      <img src="img/conocenos.png" alt="Conocenos" style="width: 100%; max-width: 600px; margin-top: 20px;" />
     </div>
   </body>
 </html>
