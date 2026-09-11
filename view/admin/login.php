@@ -137,7 +137,7 @@
             <p>Politécnico San Valero</p>
         </div>  
         <div class="login-body">
-            <form action="cms.html" method="GET">
+            <form action="CMScontrol.php" method="GET">
                 <div class="form-group">
                     <label for="username">Usuario o Correo Institucional</label>
                     <input type="text" id="username" class="form-control" placeholder="ejemplo@fundosva.com" required value="admin@fundosva.com">
