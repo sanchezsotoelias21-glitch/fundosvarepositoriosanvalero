@@ -623,3 +623,17 @@ ul.inline li a {
 .local-pages-menu .has-dropdown > .menu-parent {
     cursor: pointer;
 }
+
+
+/* ===== ENLACES DIRECTOS DENTRO DEL MISMO CONTENT-FRAME =====
+   Actualidad, Oferta Formativa y Contacto:
+   - no son desplegables
+   - no abren pestaña nueva
+   - cargan su página dentro del mismo frame
+*/
+.local-pages-menu .direct-page > a {
+    target-name: content-frame;
+}
+.local-pages-menu .direct-page > .dropdown-menu {
+    display: none !important;
+}

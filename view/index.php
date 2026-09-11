@@ -652,12 +652,12 @@ ul.inline li a {
 
   <!-- ENLACE DIRECTO: no usa iframe ni despliegue -->
   <div class="menu-item direct-page">
-    <a href="view/pages/actualidad/actualidad.php" target="_self">Actualidad</a>
+    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a>
   </div>
 
   <!-- ENLACE DIRECTO: no usa iframe ni despliegue -->
   <div class="menu-item direct-page">
-    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="_self">Oferta Formativa</a>
+    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a>
   </div>
 
   <div class="menu-item has-dropdown">
@@ -675,7 +675,7 @@ ul.inline li a {
 
   <!-- CONTACTO DIRECTO: página independiente, sin iframe -->
   <div class="menu-item direct-page">
-    <a href="view/pages/contacto/contacto.php" target="_self">Contacto</a>
+    <a href="view/pages/contacto/contacto.php" target="content-frame">Contacto</a>
   </div>
 </nav>
     </div>
