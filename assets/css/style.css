@@ -588,17 +588,29 @@ ul.inline li a {
 @media(max-width:600px){.local-pages-menu .menu-item>a{padding:8px 8px;font-size:11px}.local-pages-menu .dropdown-menu{min-width:155px;left:50%;transform:translateX(-50%)}}
 
 
-/* ===== MENU FINAL: SOLO NOSOTROS Y TECNICAS SON DESPLEGABLES ===== */
-.local-pages-menu .menu-item:not(.has-dropdown) > .dropdown-menu {
-    display: none !important;
+/* ===== SOLO SCROLL DE LA PÁGINA PRINCIPAL ===== */
+html, body {
+    overflow-x: hidden;
 }
-.local-pages-menu .menu-item:not(.has-dropdown) > a .dropdown-arrow {
-    display: none !important;
+
+.iframe-wrapper {
+    height: auto !important;
+    min-height: 0;
+    overflow: hidden !important;
 }
-.local-pages-menu .menu-item.has-dropdown > .dropdown-menu {
-    display: none;
-}
-.local-pages-menu .menu-item.has-dropdown:hover > .dropdown-menu,
-.local-pages-menu .menu-item.has-dropdown:focus-within > .dropdown-menu {
+
+#content-frame {
     display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border: 0;
+    overflow: hidden !important;
+    scrollbar-width: none;
+}
+
+#content-frame::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }

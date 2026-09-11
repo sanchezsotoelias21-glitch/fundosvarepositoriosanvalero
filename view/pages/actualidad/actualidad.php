@@ -17,7 +17,8 @@
       }
       h1 { color: #ea8b15; }
       ul { line-height: 2; }
-    </style>
+    html, body { overflow: visible !important; overflow-x: hidden !important; }
+</style>
   </head>
   <body>
     <div class="container">

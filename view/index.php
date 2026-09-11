@@ -633,14 +633,9 @@ ul.inline li a {
       </div>
 
             <nav class="local-pages-menu" aria-label="Menú principal">
-  <div class="menu-item">
-    <a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a>
-  </div>
-
+  <div class="menu-item"><a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a></div>
   <div class="menu-item has-dropdown">
-    <a href="view/pages/nosotros/conocenos.php" target="content-frame" class="menu-parent">
-      Nosotros <span class="dropdown-arrow">▾</span>
-    </a>
+    <a href="view/pages/nosotros/conocenos.php" target="content-frame">Nosotros <span class="dropdown-arrow">▾</span></a>
     <ul class="dropdown-menu">
       <li><a href="view/pages/nosotros/historia.php" target="content-frame">Historia</a></li>
       <li><a href="view/pages/nosotros/comitedirectivo.php" target="content-frame">Comité Directivo</a></li>
@@ -649,19 +644,20 @@ ul.inline li a {
       <li><a href="view/pages/nosotros/conocenos.php" target="content-frame">Conócenos</a></li>
     </ul>
   </div>
-
-  <div class="menu-item">
-    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a>
-  </div>
-
-  <div class="menu-item">
-    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a>
-  </div>
-
   <div class="menu-item has-dropdown">
-    <a href="view/pages/tecnicas/informática.php" target="content-frame" class="menu-parent">
-      Técnicas <span class="dropdown-arrow">▾</span>
-    </a>
+    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad <span class="dropdown-arrow">▾</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a></li>
+    </ul>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa <span class="dropdown-arrow">▾</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a></li>
+    </ul>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="view/pages/tecnicas/informática.php" target="content-frame">Técnicas <span class="dropdown-arrow">▾</span></a>
     <ul class="dropdown-menu">
       <li><a href="view/pages/tecnicas/contabilidad.php" target="content-frame">Contabilidad</a></li>
       <li><a href="view/pages/tecnicas/electricidad.php" target="content-frame">Electricidad</a></li>
@@ -670,10 +666,7 @@ ul.inline li a {
       <li><a href="view/pages/tecnicas/refrigeración.php" target="content-frame">Refrigeración</a></li>
     </ul>
   </div>
-
-  <div class="menu-item">
-    <a href="#contacto">Contacto</a>
-  </div>
+  <div class="menu-item"><a href="#contacto">Contacto</a></div>
 </nav>
     </div>
   </div>
@@ -733,7 +726,7 @@ ul.inline li a {
 <div class="main-wrapper">
   <div class="container clear">
     <div class="iframe-wrapper">
-      <iframe id="content-frame" name="content-frame" src="view/pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy"></iframe>
+      <iframe id="content-frame" name="content-frame" src="view/pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy scrolling="no"></iframe>
     </div>
   </div>
 </div>
@@ -965,5 +958,41 @@ p {
     
         <script src="../js/script.js"></script>
 
-      </body>
+      
+<script>
+(function () {
+  const frame = document.getElementById('content-frame');
+  if (!frame) return;
+
+  function resizeFrame() {
+    try {
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      const body = doc.body;
+      const html = doc.documentElement;
+      const height = Math.max(
+        body ? body.scrollHeight : 0,
+        body ? body.offsetHeight : 0,
+        html ? html.scrollHeight : 0,
+        html ? html.offsetHeight : 0
+      );
+      if (height > 0) {
+        frame.style.height = height + 'px';
+      }
+    } catch (e) {
+      /* Same-origin pages can be measured. External pages are left unchanged. */
+    }
+  }
+
+  frame.addEventListener('load', function () {
+    resizeFrame();
+    setTimeout(resizeFrame, 100);
+    setTimeout(resizeFrame, 500);
+    setTimeout(resizeFrame, 1000);
+  });
+
+  window.addEventListener('resize', resizeFrame);
+})();
+</script>
+
+</body>
 </html>
