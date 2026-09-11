@@ -586,3 +586,19 @@ ul.inline li a {
 .local-pages-menu .dropdown-menu li a:hover{color:#e98c13!important;background:#f6f6f6;}
 .header{position:relative;z-index:1000;}
 @media(max-width:600px){.local-pages-menu .menu-item>a{padding:8px 8px;font-size:11px}.local-pages-menu .dropdown-menu{min-width:155px;left:50%;transform:translateX(-50%)}}
+
+
+/* ===== MENU FINAL: SOLO NOSOTROS Y TECNICAS SON DESPLEGABLES ===== */
+.local-pages-menu .menu-item:not(.has-dropdown) > .dropdown-menu {
+    display: none !important;
+}
+.local-pages-menu .menu-item:not(.has-dropdown) > a .dropdown-arrow {
+    display: none !important;
+}
+.local-pages-menu .menu-item.has-dropdown > .dropdown-menu {
+    display: none;
+}
+.local-pages-menu .menu-item.has-dropdown:hover > .dropdown-menu,
+.local-pages-menu .menu-item.has-dropdown:focus-within > .dropdown-menu {
+    display: block;
+}
