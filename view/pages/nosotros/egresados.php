@@ -19,9 +19,57 @@
       h1 { color: #ea8b15; }
       p { line-height: 1.7; }
     </style>
+<<<<<<< HEAD
   </head>
+=======
+  
+<style id="no-scroll-page">
+html, body {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+}
+</style>
+
+
+<style id="page-no-inner-scroll-final">
+html, body {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+}
+
+.egresados-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 25px 0;
+}
+
+.egresados-header img {
+    display: block;
+    width: 90%;
+    max-width: 1050px;
+    height: auto;
+    margin: 0 auto;
+}|
+
+</style>
+
+</head>
+>>>>>>> 6fb2262 (Fix: dddddd)
   <body>
     <div class="container">
+
+    <img src="../../../images/egresados.png"
+         alt="Egresados"
+         class="imagen-egresados">
+     
       <h1>Egresados</h1>
       <p>La presencia de los egresados de la Fundación Dominicana San Valero es muy importante para nosotros. El contacto que tenemos con nuestros egresados se vuelve cada vez más fuertes porque pertenecerán siempre a la familia Fundosva.</p>
 
