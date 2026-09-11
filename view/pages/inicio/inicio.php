@@ -21,8 +21,7 @@
       p {
         line-height: 1.7;
       }
-    html, body { overflow: visible !important; overflow-x: hidden !important; }
-</style>
+    </style>
   </head>
   <body>
     <div class="container">

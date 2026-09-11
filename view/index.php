@@ -633,9 +633,14 @@ ul.inline li a {
       </div>
 
             <nav class="local-pages-menu" aria-label="Menú principal">
-  <div class="menu-item"><a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a></div>
+  <div class="menu-item">
+    <a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a>
+  </div>
+
   <div class="menu-item has-dropdown">
-    <a href="view/pages/nosotros/conocenos.php" target="content-frame">Nosotros <span class="dropdown-arrow">▾</span></a>
+    <a href="#" class="menu-parent" aria-haspopup="true" aria-expanded="false">
+      Nosotros <span class="dropdown-arrow">▾</span>
+    </a>
     <ul class="dropdown-menu">
       <li><a href="view/pages/nosotros/historia.php" target="content-frame">Historia</a></li>
       <li><a href="view/pages/nosotros/comitedirectivo.php" target="content-frame">Comité Directivo</a></li>
@@ -644,20 +649,21 @@ ul.inline li a {
       <li><a href="view/pages/nosotros/conocenos.php" target="content-frame">Conócenos</a></li>
     </ul>
   </div>
-  <div class="menu-item has-dropdown">
-    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad <span class="dropdown-arrow">▾</span></a>
-    <ul class="dropdown-menu">
-      <li><a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a></li>
-    </ul>
+
+  <!-- ENLACE DIRECTO: no usa iframe ni despliegue -->
+  <div class="menu-item direct-page">
+    <a href="view/pages/actualidad/actualidad.php" target="_self">Actualidad</a>
   </div>
-  <div class="menu-item has-dropdown">
-    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa <span class="dropdown-arrow">▾</span></a>
-    <ul class="dropdown-menu">
-      <li><a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a></li>
-    </ul>
+
+  <!-- ENLACE DIRECTO: no usa iframe ni despliegue -->
+  <div class="menu-item direct-page">
+    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="_self">Oferta Formativa</a>
   </div>
+
   <div class="menu-item has-dropdown">
-    <a href="view/pages/tecnicas/informática.php" target="content-frame">Técnicas <span class="dropdown-arrow">▾</span></a>
+    <a href="#" class="menu-parent" aria-haspopup="true" aria-expanded="false">
+      Técnicas <span class="dropdown-arrow">▾</span>
+    </a>
     <ul class="dropdown-menu">
       <li><a href="view/pages/tecnicas/contabilidad.php" target="content-frame">Contabilidad</a></li>
       <li><a href="view/pages/tecnicas/electricidad.php" target="content-frame">Electricidad</a></li>
@@ -666,7 +672,11 @@ ul.inline li a {
       <li><a href="view/pages/tecnicas/refrigeración.php" target="content-frame">Refrigeración</a></li>
     </ul>
   </div>
-  <div class="menu-item"><a href="#contacto">Contacto</a></div>
+
+  <!-- CONTACTO DIRECTO: página independiente, sin iframe -->
+  <div class="menu-item direct-page">
+    <a href="view/pages/contacto/contacto.php" target="_self">Contacto</a>
+  </div>
 </nav>
     </div>
   </div>
@@ -726,20 +736,64 @@ ul.inline li a {
 <div class="main-wrapper">
   <div class="container clear">
     <div class="iframe-wrapper">
-      <iframe id="content-frame" name="content-frame" src="view/pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy scrolling="no"></iframe>
+      <iframe id="content-frame" name="content-frame" src="view/pages/inicio/inicio.php" title="Contenido del sitio" loading="lazy"></iframe>
     </div>
   </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.local-pages-menu a');
-    links.forEach((link) => {
-      link.addEventListener('click', function () {
-        links.forEach((item) => item.classList.remove('active'));
-        this.classList.add('active');
+document.addEventListener('DOMContentLoaded', function () {
+  const menu = document.querySelector('.local-pages-menu');
+  if (!menu) return;
+
+  const links = menu.querySelectorAll('a');
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const parent = this.closest('.has-dropdown');
+
+      // Category buttons (Nosotros/Técnicas): open the menu only.
+      if (parent && this.classList.contains('menu-parent')) {
+        event.preventDefault();
+
+        const isOpen = parent.classList.contains('open');
+
+        menu.querySelectorAll('.has-dropdown.open').forEach(function (item) {
+          item.classList.remove('open');
+          const button = item.querySelector('.menu-parent');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          parent.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+        return;
+      }
+
+      // A submenu item loads inside the main content frame.
+      links.forEach(function (item) {
+        item.classList.remove('active');
       });
+      this.classList.add('active');
+
+      if (parent) {
+        const button = parent.querySelector('.menu-parent');
+        if (button) button.classList.add('active');
+      }
     });
   });
+
+  // Close an open category when clicking elsewhere.
+  document.addEventListener('click', function (event) {
+    if (!menu.contains(event.target)) {
+      menu.querySelectorAll('.has-dropdown.open').forEach(function (item) {
+        item.classList.remove('open');
+        const button = item.querySelector('.menu-parent');
+        if (button) button.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+});
 </script>
   <footer class="footer-blocks footer">
   <div class="container">
@@ -958,41 +1012,5 @@ p {
     
         <script src="../js/script.js"></script>
 
-      
-<script>
-(function () {
-  const frame = document.getElementById('content-frame');
-  if (!frame) return;
-
-  function resizeFrame() {
-    try {
-      const doc = frame.contentDocument || frame.contentWindow.document;
-      const body = doc.body;
-      const html = doc.documentElement;
-      const height = Math.max(
-        body ? body.scrollHeight : 0,
-        body ? body.offsetHeight : 0,
-        html ? html.scrollHeight : 0,
-        html ? html.offsetHeight : 0
-      );
-      if (height > 0) {
-        frame.style.height = height + 'px';
-      }
-    } catch (e) {
-      /* Same-origin pages can be measured. External pages are left unchanged. */
-    }
-  }
-
-  frame.addEventListener('load', function () {
-    resizeFrame();
-    setTimeout(resizeFrame, 100);
-    setTimeout(resizeFrame, 500);
-    setTimeout(resizeFrame, 1000);
-  });
-
-  window.addEventListener('resize', resizeFrame);
-})();
-</script>
-
-</body>
+      </body>
 </html>

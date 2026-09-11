@@ -17,8 +17,7 @@
       }
       h1 { color: #ea8b15; }
       p, li { line-height: 1.7; }
-    html, body { overflow: visible !important; overflow-x: hidden !important; }
-</style>
+    </style>
   </head>
   <body>
     <div class="container">
