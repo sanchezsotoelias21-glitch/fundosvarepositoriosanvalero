@@ -586,3 +586,54 @@ ul.inline li a {
 .local-pages-menu .dropdown-menu li a:hover{color:#e98c13!important;background:#f6f6f6;}
 .header{position:relative;z-index:1000;}
 @media(max-width:600px){.local-pages-menu .menu-item>a{padding:8px 8px;font-size:11px}.local-pages-menu .dropdown-menu{min-width:155px;left:50%;transform:translateX(-50%)}}
+
+
+/* =========================================================
+   NAVEGACIÓN FINAL
+   Actualidad, Oferta Formativa y Contacto = DIRECTOS.
+   Nosotros y Técnicas = CATEGORÍAS CON SUBMENÚ.
+   ========================================================= */
+
+.local-pages-menu .direct-page {
+    position: relative;
+}
+
+.local-pages-menu .direct-page > a {
+    cursor: pointer;
+}
+
+.local-pages-menu .direct-page > .dropdown-menu,
+.local-pages-menu .direct-page > a .dropdown-arrow {
+    display: none !important;
+}
+
+/* Las categorías solo muestran sus opciones al pasar el mouse
+   o cuando el usuario las abre con un clic. */
+.local-pages-menu .has-dropdown > .dropdown-menu {
+    display: none;
+}
+
+.local-pages-menu .has-dropdown:hover > .dropdown-menu,
+.local-pages-menu .has-dropdown:focus-within > .dropdown-menu,
+.local-pages-menu .has-dropdown.open > .dropdown-menu {
+    display: block;
+}
+
+/* Los padres de categoría no deben comportarse como enlaces directos. */
+.local-pages-menu .has-dropdown > .menu-parent {
+    cursor: pointer;
+}
+
+
+/* ===== ENLACES DIRECTOS DENTRO DEL MISMO CONTENT-FRAME =====
+   Actualidad, Oferta Formativa y Contacto:
+   - no son desplegables
+   - no abren pestaña nueva
+   - cargan su página dentro del mismo frame
+*/
+.local-pages-menu .direct-page > a {
+    target-name: content-frame;
+}
+.local-pages-menu .direct-page > .dropdown-menu {
+    display: none !important;
+}

@@ -627,15 +627,20 @@ ul.inline li a {
       <div class="site-brand">
         <div class="site-logo">
           <a href="index.php" rel="home">
-            <img src="../../img/logo.png" alt="Inicio" />
+            <img src="https://fundosva.com/sites/default/files/Logo-300.jpg" alt="Inicio" />
           </a>
         </div>
       </div>
 
             <nav class="local-pages-menu" aria-label="Menú principal">
-  <div class="menu-item"><a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a></div>
+  <div class="menu-item">
+    <a href="view/pages/inicio/inicio.php" target="content-frame" class="active">Inicio</a>
+  </div>
+
   <div class="menu-item has-dropdown">
-    <a href="view/pages/nosotros/conocenos.php" target="content-frame">Nosotros <span class="dropdown-arrow">▾</span></a>
+    <a href="#" class="menu-parent" aria-haspopup="true" aria-expanded="false">
+      Nosotros <span class="dropdown-arrow">▾</span>
+    </a>
     <ul class="dropdown-menu">
       <li><a href="view/pages/nosotros/historia.php" target="content-frame">Historia</a></li>
       <li><a href="view/pages/nosotros/comitedirectivo.php" target="content-frame">Comité Directivo</a></li>
@@ -644,20 +649,21 @@ ul.inline li a {
       <li><a href="view/pages/nosotros/conocenos.php" target="content-frame">Conócenos</a></li>
     </ul>
   </div>
-  <div class="menu-item has-dropdown">
-    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad <span class="dropdown-arrow">▾</span></a>
-    <ul class="dropdown-menu">
-      <li><a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a></li>
-    </ul>
+
+  <!-- ENLACE DIRECTO: no usa iframe ni despliegue -->
+  <div class="menu-item direct-page">
+    <a href="view/pages/actualidad/actualidad.php" target="content-frame">Actualidad</a>
   </div>
-  <div class="menu-item has-dropdown">
-    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa <span class="dropdown-arrow">▾</span></a>
-    <ul class="dropdown-menu">
-      <li><a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a></li>
-    </ul>
+
+  <!-- ENLACE DIRECTO: no usa iframe ni despliegue -->
+  <div class="menu-item direct-page">
+    <a href="view/pages/ofertaformativa/ofertaformativa.php" target="content-frame">Oferta Formativa</a>
   </div>
+
   <div class="menu-item has-dropdown">
-    <a href="view/pages/tecnicas/informática.php" target="content-frame">Técnicas <span class="dropdown-arrow">▾</span></a>
+    <a href="#" class="menu-parent" aria-haspopup="true" aria-expanded="false">
+      Técnicas <span class="dropdown-arrow">▾</span>
+    </a>
     <ul class="dropdown-menu">
       <li><a href="view/pages/tecnicas/contabilidad.php" target="content-frame">Contabilidad</a></li>
       <li><a href="view/pages/tecnicas/electricidad.php" target="content-frame">Electricidad</a></li>
@@ -666,7 +672,11 @@ ul.inline li a {
       <li><a href="view/pages/tecnicas/refrigeración.php" target="content-frame">Refrigeración</a></li>
     </ul>
   </div>
-  <div class="menu-item"><a href="#contacto">Contacto</a></div>
+
+  <!-- CONTACTO DIRECTO: página independiente, sin iframe -->
+  <div class="menu-item direct-page">
+    <a href="view/pages/contacto/contacto.php" target="content-frame">Contacto</a>
+  </div>
 </nav>
     </div>
   </div>
@@ -731,15 +741,59 @@ ul.inline li a {
   </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.local-pages-menu a');
-    links.forEach((link) => {
-      link.addEventListener('click', function () {
-        links.forEach((item) => item.classList.remove('active'));
-        this.classList.add('active');
+document.addEventListener('DOMContentLoaded', function () {
+  const menu = document.querySelector('.local-pages-menu');
+  if (!menu) return;
+
+  const links = menu.querySelectorAll('a');
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const parent = this.closest('.has-dropdown');
+
+      // Category buttons (Nosotros/Técnicas): open the menu only.
+      if (parent && this.classList.contains('menu-parent')) {
+        event.preventDefault();
+
+        const isOpen = parent.classList.contains('open');
+
+        menu.querySelectorAll('.has-dropdown.open').forEach(function (item) {
+          item.classList.remove('open');
+          const button = item.querySelector('.menu-parent');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          parent.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+        return;
+      }
+
+      // A submenu item loads inside the main content frame.
+      links.forEach(function (item) {
+        item.classList.remove('active');
       });
+      this.classList.add('active');
+
+      if (parent) {
+        const button = parent.querySelector('.menu-parent');
+        if (button) button.classList.add('active');
+      }
     });
   });
+
+  // Close an open category when clicking elsewhere.
+  document.addEventListener('click', function (event) {
+    if (!menu.contains(event.target)) {
+      menu.querySelectorAll('.has-dropdown.open').forEach(function (item) {
+        item.classList.remove('open');
+        const button = item.querySelector('.menu-parent');
+        if (button) button.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+});
 </script>
   <footer class="footer-blocks footer">
   <div class="container">

@@ -1,3 +1,64 @@
+<?php
+session_start();
+
+if (isset($_SESSION['usuario_id'])) {
+    header('Location: CMSControl.php');
+    exit;
+}
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $usuarioInput = trim($_POST['usuario'] ?? '');
+    $claveInput = $_POST['password'] ?? '';
+
+    if ($usuarioInput !== '' && $claveInput !== '') {
+        try {
+            $usuarios = require __DIR__ . '/../../bdd/conexion.php';
+
+            $usuario = null;
+            foreach ($usuarios as $item) {
+                $nombreUsuario = trim((string) ($item['nombre_usuario'] ?? ''));
+                $correoUsuario = trim((string) ($item['correo_usuario'] ?? ''));
+
+                if ($nombreUsuario === $usuarioInput || $correoUsuario === $usuarioInput) {
+                    $usuario = $item;
+                    break;
+                }
+            }
+
+            if ($usuario) {
+                $passwordHash = (string) ($usuario['password_hash'] ?? '');
+                $passwordOk = false;
+
+                if ($passwordHash !== '') {
+                    if (password_verify($claveInput, $passwordHash)) {
+                        $passwordOk = true;
+                    } elseif ($claveInput === $passwordHash) {
+                        $passwordOk = true;
+                    }
+                }
+
+                if ($passwordOk) {
+                    $_SESSION['usuario_id'] = $usuario['id_usuario'];
+                    $_SESSION['usuario_nombre'] = $usuario['nombre_usuario'];
+                    $_SESSION['usuario_rol'] = $usuario['rol'];
+                    $_SESSION['usuario_correo'] = $usuario['correo_usuario'];
+
+                    header('Location: CMSControl.php');
+                    exit;
+                }
+            }
+
+            $error = 'Usuario/correo o contraseña incorrectos.';
+        } catch (Exception $e) {
+            $error = 'No se pudo leer el archivo de usuarios.';
+        }
+    } else {
+        $error = 'Debes ingresar usuario o correo y contraseña.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -137,15 +198,21 @@
             <p>Politécnico San Valero</p>
         </div>  
         <div class="login-body">
-            <form action="CMScontrol.php" method="GET">
+            <?php if ($error !== ''): ?>
+                <div style="margin-bottom: 15px; padding: 10px 12px; border-radius: 4px; background: #fdecea; color: #a5342f; border: 1px solid #f5c6c5; font-size: 0.85rem;">
+                    <?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?>
+                </div>
+            <?php endif; ?>
+
+            <form action="login.php" method="POST">
                 <div class="form-group">
-                    <label for="username">Usuario o Correo Institucional</label>
-                    <input type="text" id="username" class="form-control" placeholder="ejemplo@fundosva.com" required value="admin@fundosva.com">
+                    <label for="usuario">Usuario o Correo Institucional</label>
+                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="ejemplo@fundosva.com" required value="<?php echo htmlspecialchars($_POST['usuario'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
                 
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" class="form-control" placeholder="••••••••" required value="12345678">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
                 </div>
                 
                 <button type="submit" class="button-primary">Iniciar Sesión</button>
