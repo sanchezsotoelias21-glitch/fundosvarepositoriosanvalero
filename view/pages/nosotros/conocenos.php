@@ -41,7 +41,7 @@
 
       <p>A nivel de asistencia y acción social a la comunidad tenemos un dispensario de atención primaria, un Departamento Social que ayuda en diferentes ámbitos a personas necesitadas y un Departamento de Orientación y Psicología al servicio del sector.</p>
 
-      <img src="img/conocenos.png" alt="Conocenos" style="width: 100%; max-width: 600px; margin-top: 20px;"/>
+      <img src="C:\Users\root\Documents\fundosvarepositoriosanvalero\fundosvarepositoriosanvalero\assets\images\conocenos.png" alt="Conocenos" style="width: 100%; margin-top: 20px;" />
     </div>
   </body>
 </html>
